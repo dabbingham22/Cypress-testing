@@ -1,5 +1,47 @@
-{
-  "name": "Using fixtures to represent data",
-  "email": "hello@cypress.io",
-  "body": "Fixtures are a great way to mock data for responses to routes"
-}
+[
+  {
+    "question": "What is the name of the cowboy toy in Toy Story?",
+    "answers": [
+      { "text": "Buzz Lightyear", "isCorrect": false },
+      { "text": "Woody", "isCorrect": true },
+      { "text": "Jessie", "isCorrect": false },
+      { "text": "Andy", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Who is Buzz Lightyear's arch-nemesis?",
+    "answers": [
+      { "text": "Lotso", "isCorrect": false },
+      { "text": "Emperor Zurg", "isCorrect": true },
+      { "text": "Sid", "isCorrect": false },
+      { "text": "Stinky Pete", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "What is the name of the boy who owns the toys?",
+    "answers": [
+      { "text": "Andy", "isCorrect": true },
+      { "text": "Sid", "isCorrect": false },
+      { "text": "Bonnie", "isCorrect": false },
+      { "text": "Rex", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Which character is a plastic dinosaur?",
+    "answers": [
+      { "text": "Slinky", "isCorrect": false },
+      { "text": "Rex", "isCorrect": true },
+      { "text": "Bullseye", "isCorrect": false },
+      { "text": "Hamm", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "Who joins the toys in Toy Story 2 as a cowgirl?",
+    "answers": [
+      { "text": "Barbie", "isCorrect": false },
+      { "text": "Jessie", "isCorrect": true },
+      { "text": "Bo Peep", "isCorrect": false },
+      { "text": "Gabby Gabby", "isCorrect": false }
+    ]
+  }
+]
