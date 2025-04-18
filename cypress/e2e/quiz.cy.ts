@@ -1,7 +1,7 @@
 describe("Quiz e2e test", () => {
   beforeEach(() => {
     cy.visit('http://localhost:3001');
-    cy.intercept('GET', 'api/questions/random', {
+    cy.intercept('GET', '/api/questions/random', {
       statusCode: 200,
       fixture: 'questions.json'
     }).as("questions");
