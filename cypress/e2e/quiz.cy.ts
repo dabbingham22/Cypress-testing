@@ -1,7 +1,10 @@
 describe("Quiz e2e test", () => {
   beforeEach(() => {
-    cy.visit("/");
-    cy.fixture("questions.json").as("questions");
+    cy.visit('http://localhost:3001');
+    cy.intercept('GET', 'api/questions/random', {
+      statusCode: 200,
+      fixture: 'questions.json'
+    }).as("questions");
   });
 
   it("On load start button is visible", () => {
@@ -11,16 +14,20 @@ describe("Quiz e2e test", () => {
   it("On click of start button quiz starts", () => {
     cy.contains("Start Quiz").click(); // Click the start button
 
-    cy.get("@questions").then((questions) => {
-      const firstQuestion = questions[0].question;
-      cy.contains(firstQuestion).should("be.visible");
-    });
+    cy.get('button').contains('1').click();
   });
+
   it("User is able to complete the quiz", () => {
-    cy.contains("Your score:").should("be.visible"); // Check if score is displayed
+    cy.get('button').contains('Start Quiz').click();
+    cy.get('button').contains('1').click();
+    cy.get('.alert-success').should('be.visible').and('contain', 'Your score');
   });
 
   it("User is able to take a new quiz", () => {
-    cy.contains("Take New Quiz").click();
+    cy.get('button').contains('Start Quiz').click();
+    cy.get('button').contains('1').click();
+    cy.get('button').contains("Take New Quiz").click();
+    cy.get('h2').should('not.be.empty');
+    cy.get('button').contains('1')
   });
 });
